@@ -32,7 +32,7 @@ pwdcopy() {
     command pwd "$@" | tr -d '\n' | pbcopy
 }
 
-print ${(pl:$LINES::\n:):-}
+# print ${(pl:$LINES::\n:):-}
 
 # aliases
 # quick navigation

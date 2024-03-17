@@ -804,6 +804,8 @@
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
+			<key>Show Status Bar</key>
+			<false/>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
@@ -890,7 +892,7 @@
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.45315325394417472</real>
 	<key>StatusBarPosition</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>TabStyleWithAutomaticOption</key>
