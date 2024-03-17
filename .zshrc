@@ -29,8 +29,10 @@ catcopy() {
 }
 
 pwdcopy() {
-    pwd "$@" | pbcopy
+    command pwd "$@" | tr -d '\n' | pbcopy
 }
+
+print ${(pl:$LINES::\n:):-}
 
 # aliases
 # quick navigation
@@ -49,10 +51,12 @@ alias brewup="brew update && brew upgrade && brew cleanup"
 alias c="code ."
 alias caffee="caffeinate -d"
 alias cr="code -r ."
+alias g="grep"
 alias k="kubectl"
 alias o="open ."
 alias p="poetry"
 alias pa="poetry add"
 alias t="terraform"
 # other
+alias backup="/Users/polo/Documents/backups/backup.sh"
 alias sz="source ~/.zshrc"
