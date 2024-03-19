@@ -39,8 +39,8 @@
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     # =========================[ Line #2 ]=========================
-    # newline                 # \n
-    # prompt_char             # prompt symbol
+    newline                 # \n
+    prompt_char             # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -109,7 +109,7 @@
     # time                  # current time
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     # =========================[ Line #2 ]=========================
-    # newline                 # \n
+    newline                 # \n
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
@@ -654,7 +654,7 @@
 
   # Go version from asdf.
   typeset -g POWERLEVEL9K_ASDF_GOLANG_FOREGROUND=37
-  typeset -g POWERLEVEL9K_ASDF_GOLANG_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_GOLANG_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_GOLANG_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Node.js version from asdf.
@@ -1032,7 +1032,7 @@
   # If set to false, hide go version if it's equal to "system".
   typeset -g POWERLEVEL9K_GOENV_SHOW_SYSTEM=true
   # Custom icon.
-  # typeset -g POWERLEVEL9K_GOENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_GOENV_VISUAL_IDENTIFIER_EXPANSION='goenv'
 
   ##########[ nodenv: node.js version from nodenv (https://github.com/nodenv/nodenv) ]##########
   # Nodenv color.
@@ -1082,7 +1082,7 @@
   # Show go version only when in a go project subdirectory.
   typeset -g POWERLEVEL9K_GO_VERSION_PROJECT_ONLY=true
   # Custom icon.
-  # typeset -g POWERLEVEL9K_GO_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_GO_VERSION_VISUAL_IDENTIFIER_EXPANSION=''
 
   #################[ rust_version: rustc version (https://www.rust-lang.org) ]##################
   # Rust version color.
