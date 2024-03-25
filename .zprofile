@@ -76,4 +76,4 @@ fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # use default poetry env
-emulate bash -c '. /Users/polo/.venv/bin/activate'
+# emulate bash -c '. /Users/polo/.venv/bin/activate'

@@ -15,8 +15,12 @@ source ~/.zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
 
 # Autocomplete
+autoload -Uz compinit && compinit
+
 source <(kubectl completion zsh)
 source <(docker completion zsh)
+source "/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc"
+complete -C "/opt/homebrew/bin/aws_completer" aws
 
 # ENV
 export GOPATH=~/go
@@ -24,15 +28,24 @@ export PATH=$PATH:$GOPATH/bin
 
 # Functions
 catcopy() {
-    cat "$@" | pbcopy
-    cat "$@"
+    command cat "$@" | pbcopy
+    command cat "$@"
 }
 
 pwdcopy() {
     command pwd "$@" | tr -d '\n' | pbcopy
+    command pwd "$@"
 }
 
-# print ${(pl:$LINES::\n:):-}
+postgres() {
+    if [[ $1 == "up" ]]; then
+        kubectl apply -f /Users/polo/Documents/kubernetes/postgres/postgres.yml
+    elif [[ $1 == "down" ]]; then
+        kubectl delete -f /Users/polo/Documents/kubernetes/postgres/postgres.yml
+    else
+        echo "Unsupported command: $1"
+    fi
+}
 
 # aliases
 # quick navigation
@@ -47,6 +60,7 @@ alias cat='catcopy'
 alias pwd="pwdcopy"
 alias ls="eza --group-directories-first -a --icons"
 # shortend commands
+alias bat="bat -p"
 alias brewup="brew update && brew upgrade && brew cleanup"
 alias c="code ."
 alias caffee="caffeinate -d"
@@ -56,6 +70,7 @@ alias k="kubectl"
 alias o="open ."
 alias p="poetry"
 alias pa="poetry add"
+alias postgresup="kubectl apply -f /Users/polo/Documents/kubernetes/postgres/posgres.yaml"
 alias t="terraform"
 # other
 alias backup="/Users/polo/Documents/backups/backup.sh"
